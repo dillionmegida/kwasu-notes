@@ -1,0 +1,18 @@
+:root {
+    --color1: darkslategrey;
+    --color2: #e26614;
+    --color3: #54227b;
+    --mainText: #333;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}

@@ -1,0 +1,58 @@
+.Header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    background-color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.Header .Kwasu {
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.Kwasu img {
+    width: 40px;
+    object-fit: cover;
+}
+
+.Header > * {
+    margin: 0;
+}
+
+.Header nav ul {
+    margin: 0;
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.Header nav ul li {
+    display: inline-block;
+}
+
+.Header a {
+    color: white;
+    text-decoration: none;
+}
+
+.Header a:hover,
+.Header a:focus,
+.Header .ActiveClass {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 425px) {
+    .SkName {
+        display: none;
+    }
+}

@@ -1,0 +1,11 @@
+footer {
+    margin: 0 auto;  
+    color: var(--color1);
+    text-align: center;
+    border-top: 1px solid #ddd;
+    width: 80%;
+}
+
+footer a {
+    color: var(--color2);
+}

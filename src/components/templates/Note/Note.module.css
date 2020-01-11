@@ -1,0 +1,23 @@
+.Info {
+    border-bottom: 1px solid #ddd;
+}
+
+.Info > * {
+    margin: 10px 0;
+}
+
+.Info h1 {
+    color: var(--color3);
+}
+
+.Resources {
+    list-style-type: square;
+}
+
+.Info p, .Info .Resources {
+    color: #333;
+}
+
+.Content {
+    color: #333;
+}
