@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Logo from '../../assets/images/logo.png';
 
 export default () => (
-    <Helment>
+    <Helmet>
         <link rel='icon' href={Logo} />
-    </Helment>
+    </Helmet>
 )
