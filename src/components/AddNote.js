@@ -8,4 +8,4 @@ export default () => (
     <p>
         If you want to add notes (as a Class Representative or someone to represent him) for your department (at any level) on this platform, kindly <a href={addDoc.link}>go through this document</a>.
     </p>
-)
+) 
