@@ -8,7 +8,7 @@ import { textToLink } from '../../../functions/links';
 export default ({ data }) => {
     const { markdownRemark: post } = data;
     const { frontmatter } = post;
-    const { title, dpt, semester, set, lecturer } = frontmatter;
+    const { title, dpt, semester, set, lecturer, resources } = frontmatter;
 
     const dptLink = textToLink(dpt);
     return (
@@ -36,14 +36,23 @@ export default ({ data }) => {
               <p>
                 <b>Lecturer:</b> {lecturer}
               </p>
-              <p>
-                <b>Resources: </b>
-              </p>
-              <ul className={Styles.Resources}>
-                <li>Resource 1</li>
-              </ul>
+              {resources !== undefined && resources !== null && (
+                <>
+                  <p>
+                    <b>Resources: </b>
+                  </p>
+                  <ul className={Styles.Resources}>
+                    {resources.map((r, i) => (
+                      <li key={`${r.name}_${i}`}>
+                        <a href={r.link}>{r.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
             <div className={Styles.Content}>
+              <p><em>Some Jottings...</em></p>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
         </Layout>
@@ -64,6 +73,10 @@ export const query = graphql`
         semester
         lecturer
         dpt
+        resources {
+          name
+          link
+        }
       }
     }
   }

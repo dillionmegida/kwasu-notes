@@ -8,6 +8,11 @@
     min-height: calc(100vh - 60px - 80px - 50px - 60px);
 }
 
+.Children p,
+.Children ul {
+    line-height: 25px;
+}
+
 @media only screen and (max-width: 400px) {
     .Children {
         width: 95vw;
