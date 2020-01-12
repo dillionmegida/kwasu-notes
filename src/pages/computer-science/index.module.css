@@ -2,11 +2,6 @@
     color: var(--mainText);
 }
 
-.Notes ul {
-    padding: 0 10px;
-    list-style-type: square;
-}
-
-.Notes ul li {
+.Notes section {
     margin: 10px 0;
 }

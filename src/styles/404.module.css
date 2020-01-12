@@ -1,0 +1,8 @@
+.ErrorSection h1,
+.ErrorSection h2 {
+    margin: 10px 0;
+}
+
+.ErrorSection a {
+    color: var(--color2);
+}

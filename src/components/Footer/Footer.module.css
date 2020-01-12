@@ -4,6 +4,15 @@ footer {
     text-align: center;
     border-top: 1px solid #ddd;
     width: 80%;
+    height: 60px;
+}
+
+footer p:last-child {
+    font-size: 14px;
+}
+
+footer > * {
+    margin: 5px 0;
 }
 
 footer a {

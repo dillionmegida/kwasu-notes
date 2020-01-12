@@ -1,0 +1,39 @@
+.Set {
+    margin: 0 0 0 10px;
+}
+
+.Details {
+    margin: 10px 0 0 20px;
+}
+
+.Details summary {
+    color: var(--color3);
+    cursor: pointer;
+}
+
+.Details a {
+    color: var(--color2);
+}
+
+.Details ul {
+    padding: 0 20px;
+    list-style-type: square;
+}
+.Details ul li {
+    margin: 10px 0;
+}
+
+.Sem {
+    margin: 0;
+    display: inline-block;
+}
+
+.Set {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.Set h4 {
+    margin: 10px 0;
+}

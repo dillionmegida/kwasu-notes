@@ -1,7 +1,11 @@
 .Children {
     width: 80%;
-    margin: 80px auto 50px;
+    margin: 80px auto 90px;
     padding: 10px;
+    /* 60px is height of header, 80px is margin-top, 50px is margin-bottom, 60px is margin-bottom
+        little issue with calculation because 90px is used for margin-bottom to suit what i need
+    */
+    min-height: calc(100vh - 60px - 80px - 50px - 60px);
 }
 
 @media only screen and (max-width: 400px) {

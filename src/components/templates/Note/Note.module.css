@@ -2,6 +2,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.Info a:first-child {
+    color: var(--color2);
+}
+
 .Info > * {
     margin: 10px 0;
 }
