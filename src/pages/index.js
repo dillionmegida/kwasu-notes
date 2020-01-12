@@ -4,6 +4,7 @@ import Styles from '../styles/index.module.css';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import departments from '../kwasu/department-lists';
+import AddNote from '../components/AddNote';
 
 let Index = () => (
     <Layout>
@@ -24,6 +25,7 @@ let Index = () => (
                     ))
                 }
             </ul>
+            <AddNote />
         </main>
     </Layout>
 );

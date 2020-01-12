@@ -3,6 +3,7 @@ import Styles from './Department.module.css';
 
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { noteSlug, textToLink } from '../../../functions/links';
+import AddNote from '../../AddNote';
 
 export default props => {
     const result = useStaticQuery(graphql`
@@ -28,6 +29,7 @@ export default props => {
                             frontmatter {
                                 code
                                 set
+                                title
                             }
                         }
                     }
@@ -79,7 +81,7 @@ export default props => {
                                         <Link
                                             to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
                                         >
-                                            {node.frontmatter.code}
+                                            {node.frontmatter.code} - {node.frontmatter.title}
                                         </Link>
                                     </li>
                                 )
@@ -102,6 +104,7 @@ export default props => {
                     </div>
                 ))
             }
+            <AddNote />
         </>
     )
 }

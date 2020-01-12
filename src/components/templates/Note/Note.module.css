@@ -17,6 +17,12 @@
 .Resources {
     list-style-type: square;
 }
+.Resources li {
+    margin: 10px 0;
+}
+.Resources a {
+    color: var(--color2);
+}
 
 .Info p, .Info .Resources {
     color: #333;
@@ -24,4 +30,14 @@
 
 .Content {
     color: #333;
+}
+.Content p:first-child {
+    /* This is for the jotting note paragraph */
+    font-size: 14;
+    color: #aaa;
+}
+
+.Content ul {
+    padding: 0 10px 0 30px;
+    list-style-type: unset;
 }
