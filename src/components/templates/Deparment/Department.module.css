@@ -22,6 +22,12 @@
 .Details ul li {
     margin: 10px 0;
 }
+.Details > p {
+    /* The no notes message */
+    margin: 5px 20px;
+    color: red;
+    font-size: 14px;
+}
 
 .Sem {
     margin: 0;

@@ -5,6 +5,7 @@ export default {
     state: "Kwara",
     creator: {
         name: "Dillion Megida",
-        web: "https://dillionmegida.com/about"
+        web: "https://dillionmegida.com/about",
+        repo: "https://github.com/dillionmegida/kwasu-notes"
     }
 }

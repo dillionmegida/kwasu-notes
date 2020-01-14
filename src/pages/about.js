@@ -18,6 +18,9 @@ let About = () => {
                 <p>
                     Also, for studying purposes, you can check out other sets' notes (if available) to learn more about a course.
                 </p>
+                <p>
+                    You could also check out the <a href={kwasu.creator.repo}>GitHub repository on GitHub</a> for any contributions or to report any issue.
+                </p>
                 <AddNote />
             </main>
         </Layout>

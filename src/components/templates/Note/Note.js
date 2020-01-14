@@ -4,6 +4,8 @@ import Styles from './Note.module.css';
 import { graphql, Link } from 'gatsby';
 import Layout from '../../Layout/Layout';
 import { textToLink } from '../../../functions/links';
+import Helmet from '../../Helmet';
+import kwasu from '../../../kwasu/details';
 
 export default ({ data }) => {
     const { markdownRemark: post } = data;
@@ -12,7 +14,11 @@ export default ({ data }) => {
 
     const dptLink = textToLink(dpt);
     return (
-        <Layout>
+        <>
+          <Helmet
+            pageTitle = {`${title} | ${dpt} Department - ${kwasu.abbr} Notes`}
+          />
+          <Layout>
             {/* <pre>
                 {JSON.stringify(data, null, 2)}
             </pre> */}
@@ -56,6 +62,7 @@ export default ({ data }) => {
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
         </Layout>
+        </>
     )
 }
 
