@@ -83,7 +83,7 @@ module.exports = {
         background_color: `darkslategrey`,
         theme_color: `darkslategrey`,
         display: `standalone`,
-        icon: `src/img/icon.png`,
+        icon: `assets/images/logo.png`,
       },
     },
 
