@@ -3,31 +3,39 @@ import Styles from '../styles/index.module.css';
 
 import { Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
-import departments from '../kwasu/department-lists';
+// import departments from '../kwasu/department-lists';
 import AddNote from '../components/AddNote';
+import departments from '../hooks/department-lists';
 
-let Index = () => (
-    <Layout>
-        <main className={Styles.HomeSection}>
-            <h1>Notes</h1>
-            <h2>Departments</h2>
-            <ul>
-                {
-                    departments.map((d, i) => (
-                        <li key={`${d.name}_${i}`}>
+const linkToText = link => {
+    let spaced = link.replace("-", " ");
+    return spaced.toUpperCase();
+}
+
+let Index = () => {
+    const data = departments();
+    console.log(data);
+    return (
+        <Layout>
+            <main className={Styles.HomeSection}>
+                <h1>Notes</h1>
+                <h2>Departments</h2>
+                <ul>
+                    {data.map((dpt) => (
+                        <li key={dpt.id}>
                             <Link
-                                to={d.link}
-                                title={`${d.name} Department`}
+                                to={dpt.name}
                             >
-                                Computer Science
+                                {linkToText(dpt.name)}
                             </Link>
                         </li>
-                    ))
-                }
-            </ul>
-            <AddNote />
-        </main>
-    </Layout>
-);
+                    ))}
+                    
+                </ul>
+                <AddNote />
+            </main>
+        </Layout>
+    );
+}
 
 export default Index;
