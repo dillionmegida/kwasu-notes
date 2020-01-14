@@ -73,22 +73,22 @@ module.exports = {
       }
     },
 
-    // // For gatsby manifest
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Dillion Megida`,
-    //     short_name: `Dillion Megida`,
-    //     start_url: `/`,
-    //     background_color: `#130327`,
-    //     theme_color: `#130327`,
-    //     display: `standalone`,
-    //     icon: `src/img/icon.png`,
-    //   },
-    // },
+    // For gatsby manifest
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `KWASU Notes`,
+        short_name: `KWASU Notes`,
+        start_url: `/`,
+        background_color: `darkslategrey`,
+        theme_color: `darkslategrey`,
+        display: `standalone`,
+        icon: `src/img/icon.png`,
+      },
+    },
 
 
-    // // Gatsby offline
-    // `gatsby-plugin-offline`
+    // Gatsby offline
+    `gatsby-plugin-offline`
   ]
 }
