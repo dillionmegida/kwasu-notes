@@ -72,23 +72,29 @@ export default props => {
                     <summary>
                         <h5 className={Styles.Sem}>{sem === sem1 ? "1st" : "2nd"} Semester</h5>
                     </summary>
-                    <ul>
-                        {sem.map(({ edges }) => (
-                            edges
-                            .map(({ node }, i) => (
-                                // confirm the set because the semester that is returned is for all sets
-                                node.frontmatter.set === set && (
-                                    <li key={i}>
-                                        <Link
-                                            to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
-                                        >
-                                            {node.frontmatter.code} - {node.frontmatter.title}
-                                        </Link>
-                                    </li>
-                                )
-                            ))
-                        ))}
-                    </ul>
+                    {console.log(sem.length)}
+                    {sem.length > 0 ? (
+                        <ul>
+                            {sem.map(({ edges }) => (
+                                edges
+                                .map(({ node }, i) => (
+                                    // confirm the set because the semester that is returned is for all sets
+                                    node.frontmatter.set === set && (
+                                        <li key={i}>
+                                            <Link
+                                                to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
+                                            >
+                                                {node.frontmatter.code} - {node.frontmatter.title}
+                                            </Link>
+                                        </li>
+                                    )
+                                ))
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No notes have been uploaded for this semester!</p>
+                    )
+                    }
                 </details>
             </>
         )
