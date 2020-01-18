@@ -1,4 +1,4 @@
-import { useStaticQuery, qraphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 export default () => {
     const data = useStaticQuery(graphql`
