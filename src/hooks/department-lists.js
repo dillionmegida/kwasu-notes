@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 export default () => {
     const data = useStaticQuery(graphql`
         {
-            allDirectory(filter: {relativeDirectory: {eq: ""}}) {
+            allDirectory(filter: { relativeDirectory: { eq: "pages"}}) {
                 edges {
                     node {
                         id
@@ -11,8 +11,7 @@ export default () => {
                     }
                 }
             }
-        }      
-    
+        }  
     `)
     
     return data.allDirectory.edges.map(({node}) => (
