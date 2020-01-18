@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://dillionmegida.com`,
+    siteUrl: `https://kwasu-notes.netlify.com`,
   },
   plugins: [
 
@@ -28,14 +28,6 @@ module.exports = {
       },
     },
 
-    // For disque - Interaction with users on posts
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `dillionmegida-com`
-      }
-    },
-
     // For transforming markdowns
     {
       resolve: `gatsby-transformer-remark`,
@@ -44,32 +36,7 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHightlight: false,
-              languageExtensions: [
-                {
-                  language: "superscript",
-                  extend: "javascript",
-                  definition: {
-                    superscript_types: /(SuperType)/,
-                  },
-                  insertBefore: {
-                    function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
-              ]
-            }
-          }
-        ]
+        plugins: []
       }
     },
 
