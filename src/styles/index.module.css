@@ -6,3 +6,6 @@
     list-style-type: square;
 } 
 
+.HomeSection ul li {
+    text-transform: capitalize;
+}
