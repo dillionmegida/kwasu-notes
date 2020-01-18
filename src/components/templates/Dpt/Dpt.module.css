@@ -1,0 +1,18 @@
+.Notes {
+    color: var(--mainText);
+}
+
+.Notes h1 {
+    text-transform: capitalize;
+}
+
+.Notes > section {
+    padding: 0 10px;
+    margin: 10px 0 10px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.Notes > section > h2 {
+    margin: 20px 0 10px;
+}

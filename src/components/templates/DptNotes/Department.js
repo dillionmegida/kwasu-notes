@@ -3,11 +3,10 @@ import Styles from './Department.module.css';
 
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { noteSlug, textToLink } from '../../../functions/links';
-import AddNote from '../../AddNote';
-import Helmet from '../../Helmet';
-import kwasu from '../../../kwasu/details';
 
 export default props => {
+    // I'm doing two queries, first one is for all info and second one is to group the semesters
+    // then I compare the two results to filter the semesters for each set
     const result = useStaticQuery(graphql`
         query {
             allMarkdownRemark {
@@ -23,7 +22,7 @@ export default props => {
                     }
                 }
             }
-            semesters: allMarkdownRemark(limit: 2000) {
+            semesters: allMarkdownRemark(limit: 2000, sort: {fields: frontmatter___code}) {
                 group(field: frontmatter___semester) {
                     fieldValue
                     edges {
@@ -45,8 +44,6 @@ export default props => {
     const { group: semGroup } = result.semesters;
     const lvl = props.level;
     const dpt = props.dpt;
-
-    console.log(semGroup);
 
     const lvlDetails = edges.filter(({node}) => (
         node.frontmatter.lvl === lvl
@@ -75,33 +72,23 @@ export default props => {
                     <summary>
                         <h5 className={Styles.Sem}>{sem === sem1 ? "1st" : "2nd"} Semester</h5>
                     </summary>
-                    {sem.length > 0 ? (
-                        <ul>
-                            {sem.map(({ edges }) => (
-                                edges.map(({ node }) => (
-                                    // confirm the set because the semester that is returned is for all sets
-                                    node.frontmatter.set === set && (
-                                        <>
-                                            <Helmet
-                                                pageTitle = {`${kwasu.abbr} Notes for ${node.frontmatter.dpt} `}
-                                            />
-                                            <li>
-                                                <Link
-                                                    to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
-                                                >
-                                                    {node.frontmatter.code} - {node.frontmatter.title}
-                                                </Link>
-                                            </li>
-                                        </>
-                                    )
-                                ))
-                            ))}
-                        </ul>
-                    )
-                    : (
-                        <p>No notes have been uploaded for this semester!</p>
-                    )}
-                    
+                    <ul>
+                        {sem.map(({ edges }) => (
+                            edges
+                            .map(({ node }, i) => (
+                                // confirm the set because the semester that is returned is for all sets
+                                node.frontmatter.set === set && (
+                                    <li key={i}>
+                                        <Link
+                                            to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
+                                        >
+                                            {node.frontmatter.code} - {node.frontmatter.title}
+                                        </Link>
+                                    </li>
+                                )
+                            ))
+                        ))}
+                    </ul>
                 </details>
             </>
         )
@@ -110,15 +97,14 @@ export default props => {
     return (
         <>
             {
-                sets.map(set => (
-                    <div className={Styles.Set}>
+                sets.map((set, i) => (
+                    <div key={i} className={Styles.Set}>
                         <h4>{set}</h4>
                         {displaySem(sem1, set)}
                         {displaySem(sem2, set)}
                     </div>
                 ))
             }
-            <AddNote />
         </>
     )
 }

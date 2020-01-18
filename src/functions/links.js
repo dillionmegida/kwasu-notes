@@ -2,5 +2,10 @@ const noteSlug = (dpt, lvl, set, sem, code) => `/${dpt}/${lvl}/${set}/${sem}/${c
 
 const textToLink = t => t.replace(" ", '-').toLowerCase();
 
-export { noteSlug, textToLink };
+const linkToText = link => {
+    let spaced = link.replace("-", " ");
+    return spaced;
+}
+
+export { noteSlug, textToLink, linkToText };
 

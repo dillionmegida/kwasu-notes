@@ -3,15 +3,11 @@ import Styles from '../styles/index.module.css';
 
 import { Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
+import { linkToText } from '../functions/links';
 import AddNote from '../components/AddNote';
 import departments from '../hooks/department-lists';
 import Helmet from '../components/Helmet';
 import kwasu from '../kwasu/details';
-
-const linkToText = link => {
-    let spaced = link.replace("-", " ");
-    return spaced.toUpperCase();
-}
 
 let Index = () => {
     const data = departments();
