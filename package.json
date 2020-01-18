@@ -1,5 +1,5 @@
 {
-  "name": "kwasu",
+  "name": "kwasu-notes",
   "private": true,
   "description": "A web platform for sharing information and notes in KWASU",
   "version": "1.0.0",
@@ -36,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dillionmegida/kwasu"
+    "url": "https://github.com/dillionmegida/kwasu-notes"
   },
   "bugs": {
-    "url": "https://github.com/dillionmegida/kwasu/issues"
+    "url": "https://github.com/dillionmegida/kwasu-notes/issues"
   }
 }
