@@ -3,14 +3,9 @@ import Styles from '../styles/index.module.css';
 
 import { Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
-// import departments from '../kwasu/department-lists';
+import { linkToText } from '../functions/links';
 import AddNote from '../components/AddNote';
 import departments from '../hooks/department-lists';
-
-const linkToText = link => {
-    let spaced = link.replace("-", " ");
-    return spaced.toUpperCase();
-}
 
 let Index = () => {
     const data = departments();
