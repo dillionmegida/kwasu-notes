@@ -6,6 +6,8 @@ const addDoc = {
 
 export default () => (
     <p>
-        If you want to add notes (as a Class Representative or someone to represent him) for your department (at any level) on this platform, kindly <a href={addDoc.link}>go through this document</a>.
+        {/* This is the google document on how to add notes. I removed it for now, so that I can reach the class representatiives directly for adding note. */}
+        {/* If you want to add notes (as a Class Representative or someone to represent him) for your department (at any level) on this platform, kindly <a href={addDoc.link}>go through this document</a>. */}
+        ...
     </p>
 ) 
