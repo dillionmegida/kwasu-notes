@@ -72,7 +72,6 @@ export default props => {
                     <summary>
                         <h5 className={Styles.Sem}>{sem === sem1 ? "1st" : "2nd"} Semester</h5>
                     </summary>
-                    {console.log(sem.length)}
                     {sem.length > 0 ? (
                         <ul>
                             {sem.map(({ edges }) => (
