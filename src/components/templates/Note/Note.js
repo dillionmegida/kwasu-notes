@@ -10,13 +10,14 @@ import kwasu from '../../../kwasu/details';
 export default ({ data }) => {
     const { markdownRemark: post } = data;
     const { frontmatter } = post;
-    const { title, dpt, semester, set, lecturer, resources } = frontmatter;
+    const { code, title, dpt, semester, set, lecturer, resources } = frontmatter;
 
     const dptLink = textToLink(dpt);
     return (
         <>
           <Helmet
-            pageTitle = {`${title} | ${dpt} Department - ${kwasu.abbr} Notes`}
+            pageTitle = {`${code} | ${dpt} Department - ${kwasu.abbr} Notes`}
+            pageDescription = {`${title} by ${lecturer} }`}
           />
           <Layout>
             {/* <pre>
