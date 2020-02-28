@@ -76,6 +76,7 @@ export const query = graphql`
       html
       timeToRead
       frontmatter {
+        code
         title
         set
         semester
