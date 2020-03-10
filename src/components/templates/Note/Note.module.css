@@ -31,7 +31,7 @@
 .Content {
     color: #333;
 }
-.Content p:first-child {
+.Content >  p:first-child {
     /* This is for the jotting note paragraph */
     font-size: 14;
     color: #aaa;
@@ -40,4 +40,9 @@
 .Content ul {
     padding: 0 10px 0 30px;
     list-style-type: unset;
+}
+.Content blockquote {
+    border-left: 2px solid #ddd;
+    padding: 0 10px;
+    color: rgb(102, 100, 100);
 }
