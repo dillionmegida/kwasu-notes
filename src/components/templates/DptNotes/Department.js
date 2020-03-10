@@ -1,3 +1,6 @@
+// This codebase needs fixing. I'm iterating numerous times, and 'No notes for this semester'
+// needs to be adjusted to display appropriately
+
 import React from 'react';
 import Styles from './Department.module.css';
 
@@ -32,6 +35,7 @@ export default props => {
                                 set
                                 title
                                 dpt
+                                lvl
                             }
                         }
                     }
@@ -45,9 +49,10 @@ export default props => {
     const lvl = props.level;
     const dpt = props.dpt;
 
-    const lvlDetails = edges.filter(({node}) => (
+    const lvlDetails = edges.filter(({ node }) => (
         node.frontmatter.lvl === lvl
     ))
+
 
     const sets = [];
     lvlDetails.forEach(({ node }) => (
@@ -56,11 +61,11 @@ export default props => {
     ))
 
     // this function seperates all posts (including all sets) into semesters
-    const filterSem = (group, sem ) => (
-        group.filter(({ fieldValue }) => (
+    const filterSem = (group, sem) => (
+        group.filter(({ fieldValue } ) => (
             parseInt(fieldValue) === sem
         ))
-    ) 
+    )
 
     const sem1 = filterSem(semGroup, 1);
     const sem2 = filterSem(semGroup, 2);
@@ -76,23 +81,23 @@ export default props => {
                         <ul>
                             {sem.map(({ edges }) => (
                                 edges
-                                .map(({ node }, i) => (
-                                    // confirm the set because the semester that is returned is for all sets
-                                    node.frontmatter.set === set && (
-                                        <li key={i}>
-                                            <Link
-                                                to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
-                                            >
-                                                {node.frontmatter.code} - {node.frontmatter.title}
-                                            </Link>
-                                        </li>
-                                    )
-                                ))
+                                    .map(({ node }, i) => (
+                                        // confirm the set because the semester that is returned is for all sets
+                                        node.frontmatter.set === set && node.frontmatter.lvl === lvl && (
+                                            <li key={i}>
+                                                <Link
+                                                    to={noteSlug(dpt, lvl, set, sem === sem1 ? 1 : 2, textToLink(node.frontmatter.code))}
+                                                >
+                                                    {node.frontmatter.code} - {node.frontmatter.title}
+                                                </Link>
+                                            </li>
+                                        )
+                                    ))
                             ))}
                         </ul>
                     ) : (
-                        <p>No notes have been uploaded for this semester!</p>
-                    )
+                            <p>No notes have been uploaded for this semester!</p>
+                        )
                     }
                 </details>
             </>
