@@ -41,6 +41,10 @@
     padding: 0 10px 0 30px;
     list-style-type: unset;
 }
+.Content ul li,
+.Content ol li {
+    margin: 10px 0;
+}
 .Content blockquote {
     border-left: 2px solid #ddd;
     padding: 0 10px;

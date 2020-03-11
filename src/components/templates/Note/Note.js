@@ -31,6 +31,9 @@ export default ({ data }) => {
               </Link>
               <h1>{title}</h1>
               <p>
+                <b>Code:</b> {code}
+              </p>
+              <p>
                 <b>Department:</b> {dpt}
               </p>
               <p>
